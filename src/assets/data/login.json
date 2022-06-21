@@ -1,0 +1,55 @@
+{
+  "registration": [
+    {
+      "name": "Shrikant",
+      "email": "shree@gmail",
+      "password": "1234",
+      "id": 1
+    },
+    {
+      "name": "123",
+      "email": "dwad",
+      "password": "123",
+      "id": 2
+    }
+  ],
+  "login": [
+    {
+      "username": "Rahul",
+      "password": "12344"
+    },
+    {
+      "id": "1",
+      "title": "Some Todo"
+    },
+    {
+      "username": "Vishwas",
+      "password": "daw",
+      "id": "EWSSgBO"
+    },
+    {
+      "username": "Vishwas",
+      "password": "dwad",
+      "id": "eeuTdf8"
+    }
+  ],
+  "traindetails": [
+    {
+      "id": "123",
+      "trainName": "Chennai"
+    },
+    {
+      "id": "786",
+      "trainName": "Chennai Express",
+      "travelDate": "01/12/2022",
+      "startStation": "Pune",
+      "destStation": "Chennai"
+    }
+  ],
+  "booking":[
+    {
+      "id":123,
+       "booking_name":"Hello"
+    }
+  ]
+}

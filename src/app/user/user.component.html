@@ -1,0 +1,26 @@
+<br>
+<div class="container" *ngIf="currentUser; else loggedOut">
+  <header class="jumbotron">
+    <h3><br>
+      <strong>{{ currentUser.username }}</strong> Profile
+    </h3>
+  </header>
+  <p><br>
+    <strong>Email:</strong>
+    {{ currentUser.email }}
+  </p>
+  <strong>Roles:</strong>
+  {{currentUser.roles}}
+
+  <p><br>
+    <strong>Token:</strong>
+    {{currentUser.jwtToken.value.substring(0, 20)}}
+  </p>
+</div>
+<ng-template #loggedOut>
+  Please login.
+</ng-template>
+
+
+
+

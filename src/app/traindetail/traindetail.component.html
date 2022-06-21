@@ -1,0 +1,43 @@
+<h3>Train Details</h3>
+<hr>
+<a routerLink="/trains" class="btn btn-primary">
+  Back
+</a>
+<br>
+<br>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 id="name" class="panel-title">
+        {{ trains.train_name}}
+      </h3>
+    </div>
+    <div class="panel-body">
+      <p id="description" >
+        {{ trains.startStation}} --- to --- {{trains.destStation}}
+      </p>
+      <p>
+        Train Number
+      </p>
+    </div>
+    <ul class="list-group">
+      <li id="trainno" class="list-group-item">
+                {{ trains.train_no}}   
+      </li>
+      <br>
+      <p>Travel Date</p>
+      <li id="travelDate" class="list-group-item">
+        {{ trains.travelDate}}
+      </li>
+    </ul>
+    <br>
+  <div class="panel-footer">
+    <button id="edit" class="btn btn-primary btn-sm" (click)='onEdit()' *ngIf="showAdminBoard">
+      Edit
+    </button>
+    
+    <button id="delete" class="btn btn-warning btn-sm" (click)="onDelete()" *ngIf="showAdminBoard">
+      Delete
+    </button>
+  </div>
+</div>
+

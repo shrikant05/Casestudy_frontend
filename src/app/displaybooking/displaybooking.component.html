@@ -1,0 +1,60 @@
+<br>
+<a routerLink="/home" class="btn btn-primary">
+  Back To Home
+</a><br>
+<br>
+<br>
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Ticket Cancelled SuccessFully.</strong>Money refunded to your account.
+  <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="panel panel-primary">
+    <div id="pnr" class="panel-heading">
+      <h3  class="panel-title">
+        <p>
+          PNR :{{"    "+ booking.pnr}}
+        </p> 
+      </h3>
+    </div>
+    <div class="panel-body">
+      <h6 id="description" >
+       Train Name : {{"   " + booking.train_name}}
+      </h6>
+      <br>
+      <h5>
+        Train Number
+      </h5>
+    </div>
+    <ul class="list-group">
+      <li class="list-group-item">
+                {{ booking.train_no}}   
+      </li>
+      <br>
+      <h6>Date of Journey</h6>
+      <li id="travelDate" class="list-group-item">
+        {{ booking.dateOfJourney}}
+      </li>
+      <br>
+      <h6>Price per seat</h6>
+      <li id="price_per_seat" class="list-group-item">
+        {{ booking.price_per_seat}}
+      </li>
+      <br>
+      <h6>Number of Seats Booked</h6>
+      <li id="count" class="list-group-item">
+        {{ booking.seat_count}}
+      </li>
+      <br>
+     
+    </ul>
+    <br>
+  <div class="panel-footer">
+    <button id="delete" class="btn btn-warning btn-sm" (click)="onDelete()">
+      Cancel Booking
+    </button>
+  </div>
+</div>
+
+

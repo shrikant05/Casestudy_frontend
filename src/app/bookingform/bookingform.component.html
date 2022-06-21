@@ -1,0 +1,70 @@
+<h3>Book Your Ticket</h3>
+<hr>
+
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Ticket Booked SuccessFully</strong> 
+  <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="well well-lg">
+  <form #f="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="pnr">PNR</label>
+      <input type="number" placeholder="PNR" class="form-control" id="pnr" name="pnr" [ngModel]="booking.pnr" required #pnr="ngModel">
+      <div class="alert alert-danger" *ngIf="pnr.invalid && pnr.touched">
+        PNR is required.
+      </div>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="trainName">Train Name</label>
+      <input type="text" placeholder="Train Name" class="form-control" id="train_Name"  name="trainName" [ngModel]="booking.train_name"
+        required #trainName="ngModel">
+      <div class="alert alert-danger" *ngIf="trainName.invalid && trainName.touched">
+        TrainName is required.
+      </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="trainno">Train Number</label>
+        <input type="number" placeholder="Train Number" class="form-control" id="train_no" name="train_no" [ngModel]="booking.train_no" required #trainno="ngModel">
+        <div class="alert alert-danger" *ngIf="trainno.invalid && trainno.touched">
+          TrainNumber is required.
+        </div>
+      </div>
+      <br>
+    <div class="form-group">
+        <label for="price">Price per Seat</label>
+        <input type="number" placeholder="Price" class="form-control" id="price" name="price" [ngModel]="booking.price_per_seat" required #price="ngModel">
+        <div class="alert alert-danger" *ngIf="price.invalid && price.touched">
+          Price is required.
+    </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="seatcount">Number of Seats</label>
+        <input type="number" placeholder="Number of Seats" class="form-control" id="seats"  name="seats" [ngModel]="booking.seat_count"
+          required #seatcount="ngModel">
+        <div class="alert alert-danger" *ngIf="seatcount.invalid && seatcount.touched">
+          Seat count required.
+        </div>
+      </div>
+      <br>
+   <div class="form-group">
+      <label for="trainTravelDate">Date Of Journey</label>
+      <input type="text" placeholder="yyyy-mm-dd"   class="form-control" id="dateOfJourney" name="dateOfJourney" [ngModel]="booking.dateOfJourney" required #dateOfJourney="ngModel">
+      <div class="alert alert-danger" *ngIf="dateOfJourney.invalid && dateOfJourney.touched">
+        Date Of Journey is required.
+      </div>
+    </div>
+    <br>
+    
+    <button id="save" name="save" type="submit" [disabled]="f.invalid" class="btn btn-primary">
+      Pay to Confirm
+    </button>
+    <!--<app-payment [export_data]=export_data></app-payment>-->
+  </form>
+</div>
+
+

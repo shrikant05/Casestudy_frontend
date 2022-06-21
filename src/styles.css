@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+/*Footer starts here */
+
+footer{
+ 
+    height: 11vh;
+    text-align: center;
+    color: white;
+    margin :0;
+}
+
+footer h2{
+    padding-top: 1em;
+}

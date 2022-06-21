@@ -1,0 +1,53 @@
+<h3>Train Form</h3>
+<hr>
+<div class="well well-lg">
+  <form #f="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="productName">Train Number</label>
+      <input type="number"  placeholder="Train Number" class="form-control" id="trainNo" name="id" [ngModel]="train.train_no" required #name="ngModel">
+      <div class="alert alert-danger" *ngIf="name.invalid && name.touched">
+        TrainNumber is required.
+      </div>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="trainName">Train Name</label>
+      <input type="text" placeholder="Train Name" class="form-control" id="trainName"  name="trainName" [ngModel]="train.train_name"
+        required #description="ngModel">
+      <div class="alert alert-danger" *ngIf="description.invalid && description.touched">
+        TrainName is required.
+      </div>
+    </div>
+    <br>
+   <div class="form-group">
+      <label for="trainTravelDate">Travel Date</label>
+      <input type="text" placeholder="yyyy-mm-dd"   class="form-control" id="trainTravelDate" name="travelDate" [ngModel]="train.travelDate" required #travelDate="ngModel">
+      <div class="alert alert-danger" *ngIf="travelDate.invalid && travelDate.touched">
+        TravelDate is required.
+      </div>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="trainStartStation">Starting Station</label>
+      <input type="text" placeholder="Starting Station Name" class="form-control" id="trainStartStation"  name="startStation" [ngModel]="train.startStation"
+        required #startStation="ngModel">
+      <div class="alert alert-danger" *ngIf="startStation.invalid && startStation.touched">
+        Starting Station is required.
+      </div>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="trainDestinationStation">Destination Station</label>
+      <input type="text" placeholder="Destination Station Name" class="form-control" id="trainDestinationStation"  name="destStation" [ngModel]="train.destStation"
+        required #destStation="ngModel">
+      <div class="alert alert-danger" *ngIf="destStation.invalid && destStation.touched">
+        Destination Station is required.
+      </div>
+    </div>
+   <br>
+    <button id="save" name="save" type="submit" [disabled]="f.invalid" class="btn btn-primary">
+      Add
+    </button>
+  </form>
+</div>
+

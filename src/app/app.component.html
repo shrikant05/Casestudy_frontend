@@ -1,0 +1,43 @@
+<div id="app" >
+    <nav class="navbar navbar-expand navbar-dark bg-primary">
+    <img src="assets/images/Web.png" alt="Railwaylogo" class="railway-logo">
+      <a href="#" class="navbar-brand">RailwayReservation</a>
+      <ul class="navbar-nav mr-auto" routerLinkActive="active">
+        <li class="nav-item">
+          <a href="/home" class="nav-link" routerLink="home" routerLinkActive="active">Home </a>
+        </li>
+        <li class="nav-item">
+            <a  class="nav-link" routerLink="/trains" routerLinkActive="active" *ngIf="isLoggedIn">Search Trains</a>
+        </li>
+        <li class="nav-item">
+            <a  class="nav-link" routerLink="/booking/new" routerLinkActive="active" *ngIf="isLoggedIn">BookTrain</a>
+        </li>
+        <li class="nav-item" >
+            <a class="nav-link" routerLink="booking/search" routerLinkActive="active" *ngIf="isLoggedIn">Booking Details</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+        <li class="nav-item">
+          <a href="/register" class="nav-link" routerLink="register" routerLinkActive="active">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a href="/login" class="nav-link" routerLink="login" routerLinkActive="active">Login</a>
+        </li>
+      </ul>
+  
+      <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+        <li class="nav-item">
+          <a href="/user" class="nav-link" routerLink="user">{{ username }}</a>
+        </li>
+        <li class="nav-item">
+          <a href class="nav-link" (click)="logout()">LogOut</a>
+        </li>
+      </ul>
+    </nav>
+  
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <br><br><br><br><br><br>

@@ -1,0 +1,39 @@
+
+<h3>Trains</h3>
+
+<div class="container">
+  <a routerLink="/trains/new" class="btn btn-primary" *ngIf="showAdminBoard">
+    Create
+  </a>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+      <th class="text-center">TrainNumber</th>
+      <th class="text-center">TrainName</th>
+      
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let train of trainList">
+        <td>{{train.train_no}}</td>
+        <td>{{train.train_name}}</td>
+        <!--<td class="text-right">{{product.price | currency:'INR'}}</td>
+      <td class="text-center">{{product.isAvailable ? 'Yes' : 'No'}}</td>--->
+        <td>
+          <div class="btn-group btn-group-sm">
+            <a [routerLink]="['/trains', train.train_no]" class="btn btn-info">
+              Info
+            </a>
+            <a [routerLink]="['/trains', train.train_no, 'edit']" class="btn btn-success" *ngIf="showAdminBoard">
+              Update
+            </a>
+            <a class="btn btn-warning" (click)="deleteTodo(train.train_no)" *ngIf="showAdminBoard">
+              Delete
+            </a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

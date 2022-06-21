@@ -1,0 +1,25 @@
+<h3>Booking Details</h3>
+<hr>
+<a routerLink="/home" class="btn btn-primary">
+    Back
+</a><br>
+<br>
+<br>
+
+<div class="well well-lg">
+    <form #f="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="pnr">Enter PNR</label>
+            <input type="number" placeholder="Enter Pnr"   class="form-control" id="pnr" name="pnr" [ngModel]="booking.pnr" required #pnr="ngModel">
+            <div class="alert alert-danger" *ngIf="pnr.invalid && pnr.touched">
+                PNR is required.
+            </div>
+            <br>
+            <button id="save" (click)="onSubmit()" name="save" type="submit" [disabled]="f.invalid" class="btn btn-info" >
+                Search Your Booking
+            </button>           
+        </div>
+    </form>
+</div>
+<br>
+<br>
