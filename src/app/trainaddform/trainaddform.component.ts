@@ -8,6 +8,7 @@ import { TrainsService } from '../service/trains.service';
 
 @Component({
   selector: 'app-trainaddform',
+  standalone:false,
   templateUrl: './trainaddform.component.html',
   styleUrls: ['./trainaddform.component.css']
 })

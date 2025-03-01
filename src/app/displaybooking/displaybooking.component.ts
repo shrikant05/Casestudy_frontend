@@ -6,6 +6,7 @@ import { BookingserviceService } from '../service/bookingservice.service';
 
 @Component({
   selector: 'app-displaybooking',
+  standalone:false,
   templateUrl: './displaybooking.component.html',
   styleUrls: ['./displaybooking.component.css']
 })

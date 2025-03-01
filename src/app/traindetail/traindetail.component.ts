@@ -9,6 +9,7 @@ import { TokenStorageService } from '../service/token-storage.service';
 
 @Component({
   selector: 'app-traindetail',
+  standalone:false,
   templateUrl: './traindetail.component.html',
   styleUrls: ['./traindetail.component.css']
 })

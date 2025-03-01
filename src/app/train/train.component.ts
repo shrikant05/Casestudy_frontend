@@ -7,6 +7,7 @@ import { TrainsService } from '../service/trains.service';
 
 @Component({
   selector: 'app-train',
+  standalone:false,
   templateUrl: './train.component.html',
   styleUrls: ['./train.component.css']
 })

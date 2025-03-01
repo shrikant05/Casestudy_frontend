@@ -8,6 +8,7 @@ import { AppError } from '../common/app-error';
 
 @Component({
   selector: 'app-bookingform',
+  standalone:false,
   templateUrl: './bookingform.component.html',
   styleUrls: ['./bookingform.component.css']
 })
