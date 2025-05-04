@@ -5,6 +5,7 @@ import { Booking } from '../models/booking';
 
 @Component({
   selector: 'app-bookingdetails',
+  standalone:false,
   templateUrl: './bookingdetails.component.html',
   styleUrls: ['./bookingdetails.component.css']
 })
